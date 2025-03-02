@@ -101,49 +101,15 @@
             max-width: 520px;
         }
 
-        .waitlist-form {
+        .cta-container {
             display: flex;
+            justify-content: center;
             width: 100%;
-            gap: 8px;
             margin-bottom: 1rem;
         }
 
-        .input-wrapper {
-            flex: 1;
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-        }
-
-        .input-icon {
-            padding: 0 16px;
-            opacity: 0.5;
-        }
-
-        input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 16px 0 16px 0;
-            color: white;
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1rem;
-        }
-
-        input:focus {
-            outline: none;
-        }
-
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        button {
-            padding: 0 20px;
+        button, .cta-button {
+            padding: 16px 36px;
             border-radius: 8px;
             background-color: #CBFF4D;
             color: #080808;
@@ -154,9 +120,12 @@
             cursor: pointer;
             transition: all 0.2s ease;
             white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
-        button:hover {
+        button:hover, .cta-button:hover {
             background-color: #d8ff7a;
             transform: translateY(-2px);
         }
@@ -221,16 +190,6 @@
                 font-size: 1rem;
             }
 
-            .waitlist-form {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            button {
-                padding: 16px;
-                width: 100%;
-            }
-
             .header {
                 margin-bottom: 4rem;
             }
@@ -271,57 +230,57 @@
         .delay-3 { animation-delay: 0.5s; }
 
         .tooltip-trigger {
-  position: relative;
-  cursor: pointer;
-  color: #CBFF4D;
-  transition: color 0.2s;
-}
+            position: relative;
+            cursor: pointer;
+            color: #CBFF4D;
+            transition: color 0.2s;
+        }
 
-.tooltip-trigger::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(5px);
-  background-color: #CBFF4D;
-  color: #080808;
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 4px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, transform 0.3s;
-  z-index: 10;
-}
+        .tooltip-trigger::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(5px);
+            background-color: #CBFF4D;
+            color: #080808;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, transform 0.3s;
+            z-index: 10;
+        }
 
-.tooltip-trigger:hover::after {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(-5px);
-}
+        .tooltip-trigger:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
 
-/* Optional arrow pointing down */
-.tooltip-trigger::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%) translateY(0);
-  border-width: 5px;
-  border-style: solid;
-  border-color: #CBFF4D transparent transparent transparent;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, transform 0.3s;
-  z-index: 10;
-}
+        /* Optional arrow pointing down */
+        .tooltip-trigger::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%) translateY(0);
+            border-width: 5px;
+            border-style: solid;
+            border-color: #CBFF4D transparent transparent transparent;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, transform 0.3s;
+            z-index: 10;
+        }
 
-.tooltip-trigger:hover::before {
-  opacity: 1;
-  visibility: visible;
-}
+        .tooltip-trigger:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -348,43 +307,14 @@
         <p class="hero-text fade-in delay-2">
             <span class="tooltip-trigger" data-tooltip="Malayalam slang word for Meanwhile ">Meenaviyal</span> is where the curious gather — a small community
             of creators tinkering at the edges of AI possibility. We value meaningful connections and the joy of exploration.
-          </p>
+        </p>
         
-        <form class="waitlist-form fade-in delay-3" id="waitlist-form">
-            <div class="input-wrapper">
-                <div class="input-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                    </svg>
-                </div>
-                <input type="email" placeholder="Enter your email address" required>
-            </div>
-            <button type="submit">Join waitlist</button>
-        </form>
+        <div class="cta-container fade-in delay-3">
+            <a href="form.html" class="cta-button">Join waitlist</a>
+        </div>
     </div>
 
     <script>
-        // Form submission handling
-        const form = document.getElementById('waitlist-form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const button = form.querySelector('button');
-            const originalText = button.innerText;
-            
-            // Simulate form submission
-            button.innerText = 'Processing...';
-            
-            setTimeout(() => {
-                button.innerText = 'Added to waitlist!';
-                form.reset();
-                
-                setTimeout(() => {
-                    button.innerText = originalText;
-                }, 3000);
-            }, 1500);
-        });
-
         // Cursor effect for terminal style
         const typingCursor = document.querySelector('.typing-cursor');
         setTimeout(() => {
