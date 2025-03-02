@@ -493,7 +493,7 @@
                 return;
             }
             
-            let projectsFound = 0;
+            let validProjects = [];
             
             for (const project of projects) {
                 if (project.name === 'meenaviyal.github.io') continue;
@@ -501,21 +501,32 @@
                 const pageExists = await checkPageExists(projectUrl);
                 
                 if (pageExists) {
-                    const projectElement = document.createElement('article');
-                    projectElement.className = 'project';
-                    projectElement.innerHTML = `
-                        <h3>${project.name}</h3>
-                        <p>${project.description || 'A creation awaiting its moment in the spotlight.'}</p>
-                        <a href="${projectUrl}" aria-label="Explore ${project.name}">Explore</a>
-                    `;
-                    projectsContainer.appendChild(projectElement);
-                    projectsFound++;
+                    validProjects.push({
+                        name: project.name,
+                        description: project.description || 'A creation awaiting its moment in the spotlight.',
+                        url: projectUrl
+                    });
                 }
             }
             
-            if (projectsFound === 0) {
+            if (validProjects.length === 0) {
                 displaySampleProjects();
+                return;
             }
+            
+            // Randomize the order of projects
+            validProjects = shuffleArray(validProjects);
+            
+            validProjects.forEach(project => {
+                const projectElement = document.createElement('article');
+                projectElement.className = 'project';
+                projectElement.innerHTML = `
+                    <h3>${project.name}</h3>
+                    <p>${project.description}</p>
+                    <a href="${project.url}" aria-label="Explore ${project.name}">Explore</a>
+                `;
+                projectsContainer.appendChild(projectElement);
+            });
         }
         
         function displaySampleProjects() {
@@ -543,7 +554,10 @@
                 }
             ];
             
-            sampleProjects.forEach(project => {
+            // Randomize the projects order
+            const shuffledProjects = shuffleArray([...sampleProjects]);
+            
+            shuffledProjects.forEach(project => {
                 const projectElement = document.createElement('article');
                 projectElement.className = 'project';
                 projectElement.innerHTML = `
@@ -556,6 +570,15 @@
             
             // Hide the loading message
             loadingElement.style.display = 'none';
+        }
+        
+        // Fisher-Yates shuffle algorithm for randomizing array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
         }
 
         // Cursor effect for terminal style
