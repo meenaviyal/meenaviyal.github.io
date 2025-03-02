@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meenaviyal - Where makers gather, while AI evolves</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Meenaviyal is a community of creators tinkering at the edges of AI possibility. Join our waitlist to connect with makers who value exploration and meaningful connections.">
+    <meta name="keywords" content="Meenaviyal, AI community, makers, creators, innovation, technology, artificial intelligence">
+    <meta name="author" content="Meenaviyal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meenaviyal.com/">
+    <meta property="og:title" content="Meenaviyal - Where makers gather, while AI evolves">
+    <meta property="og:description" content="A small community of creators tinkering at the edges of AI possibility. We value meaningful connections and the joy of exploration.">
+    <meta property="og:image" content="https://meenaviyal.com/og-image.jpg">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://meenaviyal.com/">
+    <meta name="twitter:title" content="Meenaviyal - Where makers gather, while AI evolves">
+    <meta name="twitter:description" content="A small community of creators tinkering at the edges of AI possibility. We value meaningful connections and the joy of exploration.">
+    <meta name="twitter:image" content="https://meenaviyal.com/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://meenaviyal.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Cabinet+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -15,11 +44,15 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            min-height: 100vh;
+        }
+
         body {
             font-family: 'Clash Display', sans-serif;
             background-color: #080808;
             color: rgba(255, 255, 255, 0.9);
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -58,10 +91,9 @@
         .header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 6rem;
-            width: 100%;
             justify-content: space-between;
+            width: 100%;
+            margin-bottom: 6rem;
         }
         
         .nav-links {
@@ -130,7 +162,7 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
         }
 
         button, .cta-button {
@@ -190,6 +222,15 @@
             left: -300px;
             z-index: -1;
             filter: blur(80px);
+        }
+
+        footer {
+            margin-top: auto;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+            width: 100%;
         }
 
         @keyframes float {
@@ -313,6 +354,18 @@
             visibility: visible;
         }
     </style>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Meenaviyal",
+      "url": "https://meenaviyal.com",
+      "logo": "https://meenaviyal.com/logo.svg",
+      "description": "A community of creators tinkering at the edges of AI possibility. We value meaningful connections and the joy of exploration."
+    }
+    </script>
 </head>
 <body>
     <div class="grid-pattern"></div>
@@ -339,13 +392,17 @@
         
         <h1 class="fade-in delay-2">Where makers gather, while AI evolves<span class="typing-cursor"></span></h1>
         <p class="hero-text fade-in delay-2">
-            <span class="tooltip-trigger" data-tooltip="Malayalam slang word for Meanwhile ">Meenaviyal</span> is where the curious gather — a small community
+            <span class="tooltip-trigger" data-tooltip="Malayalam slang word for Meanwhile">Meenaviyal</span> is where the curious gather — a small community
             of creators tinkering at the edges of AI possibility. We value meaningful connections and the joy of exploration.
         </p>
         
         <div class="cta-container fade-in delay-3">
             <a href="form.html" class="cta-button">Join waitlist</a>
         </div>
+        
+        <footer class="fade-in delay-3">
+            &copy; 2025 Meenaviyal. All rights reserved.
+        </footer>
     </div>
 
     <script>
