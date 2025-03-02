@@ -60,6 +60,31 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 6rem;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            color: #CBFF4D;
         }
 
         .logo-icon {
@@ -192,6 +217,12 @@
 
             .header {
                 margin-bottom: 4rem;
+                padding: 0 1rem;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
             }
         }
 
@@ -300,6 +331,9 @@
                     </linearGradient>
                     </defs>
                 </svg>
+            </div>
+            <div class="nav-links">
+                <a href="projects.html" class="nav-link">Projects</a>
             </div>
         </div>
         
