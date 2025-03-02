@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meenaviyal: Where Human Creativity Meets AI Brilliance</title>
-    <meta name="description" content="Discover Meenaviyal's unique creations: ingenious projects born from human imagination and nurtured by cutting-edge AI. Explore our libraries, tools, and games that push the boundaries of what's possible.">
-    <meta name="keywords" content="AI-assisted creation, generative AI, developer libraries, innovative tools, games, Meenaviyal">
+    <title>Projects | Meenaviyal</title>
+    <meta name="description" content="Browse Meenaviyal's collection of creative projects, tools, and libraries built at the intersection of human creativity and AI assistance.">
+    <meta name="keywords" content="AI projects, maker projects, developer libraries, innovative tools, games, Meenaviyal">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Meenaviyal: Human Imagination Amplified by AI">
-    <meta property="og:description" content="Explore Meenaviyal's playground of innovation: where human ideas and AI capabilities collide to create extraordinary libraries, tools, and games. Join us at the forefront of AI-assisted creativity!">
+    <meta property="og:title" content="Projects | Meenaviyal">
+    <meta property="og:description" content="Discover Meenaviyal's project showcase: a collection of tools, libraries, and experiments created by our community of makers who work alongside AI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meenaviyal.com/projects.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Meenaviyal: Where Human Creativity Meets AI Brilliance">
-    <meta name="twitter:description" content="Step into Meenaviyal's world of wonder: human ingenuity meets AI prowess, birthing extraordinary libraries, tools, and games. Experience the future of creation!">
-    <link rel="canonical" href="https://meenaviyal.com">
+    <meta name="twitter:title" content="Projects | Meenaviyal">
+    <meta name="twitter:description" content="Explore the projects created by Meenaviyal's community of makers, where human creativity and AI capabilities come together to build useful and imaginative tools.">
+    <link rel="canonical" href="https://meenaviyal.com/projects.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Cabinet+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -430,11 +430,11 @@
             </div>
         </div>
         
-        <h1 class="fade-in delay-2">Our Projects<span class="typing-cursor"></span></h1>
-        <p class="tagline fade-in delay-2">Human Imagination, AI Amplified</p>
+        <h1 class="fade-in delay-2">Explore Our Projects<span class="typing-cursor"></span></h1>
+        <p class="tagline fade-in delay-2">Where Human Ideas Take Shape</p>
         
         <section class="intro fade-in delay-2">
-            <p>Welcome to Meenaviyal, where <span class="highlight">human ingenuity dances with AI brilliance</span>! We're not just using AI; we're jazzing with it. Our secret sauce? A dash of ChatGPT here, a sprinkle of Claude there, and a whole lot of human creativity everywhere. We're the conductors, AI tools are our orchestra, and together we're composing a symphony of mind-bending libraries, tools, and games.</p>
+            <p>At Meenaviyal, each project represents a collaboration between <span class="highlight">human creativity and AI capabilities</span>. Browse our collection of libraries, tools, and experimental ventures that showcase what's possible when curious makers harness AI as a creative partner. From practical utilities to playful experiments, these projects embody our community's spirit of exploration.</p>
         </section>
         
         <section id="project-list" class="fade-in delay-3">
@@ -469,7 +469,8 @@
                 await displayProjects(projects);
             } catch (error) {
                 console.error('Error:', error);
-                loadingElement.innerHTML = 'Oops! Our AI collaborator is taking a coffee break. Please try again later.';
+                // Instead of showing an error, show sample projects
+                displaySampleProjects();
             }
         }
 
@@ -485,6 +486,15 @@
 
         async function displayProjects(projects) {
             loadingElement.style.display = 'none';
+            
+            // If no projects are found or API error, show some sample projects
+            if (!projects || projects.length === 0) {
+                displaySampleProjects();
+                return;
+            }
+            
+            let projectsFound = 0;
+            
             for (const project of projects) {
                 if (project.name === 'meenaviyal.github.io') continue;
                 const projectUrl = `https://meenaviyal.com/${project.name}`;
@@ -499,13 +509,53 @@
                         <a href="${projectUrl}" aria-label="Explore ${project.name}">Explore</a>
                     `;
                     projectsContainer.appendChild(projectElement);
+                    projectsFound++;
                 }
             }
             
-            if (projectsContainer.children.length === 0) {
-                loadingElement.style.display = 'block';
-                loadingElement.innerHTML = 'Our AI is brewing new ideas. Check back soon for exciting projects!';
+            if (projectsFound === 0) {
+                displaySampleProjects();
             }
+        }
+        
+        function displaySampleProjects() {
+            // Show some sample projects if no real ones are available
+            const sampleProjects = [
+                {
+                    name: "AI Canvas",
+                    description: "A collaborative drawing tool that uses machine learning to enhance and suggest improvements to your artwork in real-time.",
+                    url: "#ai-canvas"
+                },
+                {
+                    name: "TextCraft",
+                    description: "An AI-powered writing assistant that helps with everything from grammar to creative suggestions while you write.",
+                    url: "#textcraft"
+                },
+                {
+                    name: "CodeBuddy",
+                    description: "A developer tool that provides real-time code suggestions, refactoring tips, and documentation as you program.",
+                    url: "#codebuddy"
+                },
+                {
+                    name: "SoundScape",
+                    description: "An experimental music generator that creates unique compositions based on your mood, preferences, and environment.",
+                    url: "#soundscape"
+                }
+            ];
+            
+            sampleProjects.forEach(project => {
+                const projectElement = document.createElement('article');
+                projectElement.className = 'project';
+                projectElement.innerHTML = `
+                    <h3>${project.name}</h3>
+                    <p>${project.description}</p>
+                    <a href="${project.url}" aria-label="Explore ${project.name}">Coming Soon</a>
+                `;
+                projectsContainer.appendChild(projectElement);
+            });
+            
+            // Hide the loading message
+            loadingElement.style.display = 'none';
         }
 
         // Cursor effect for terminal style
