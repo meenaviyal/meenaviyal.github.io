@@ -15,196 +15,381 @@
     <meta name="twitter:title" content="Meenaviyal: Where Human Creativity Meets AI Brilliance">
     <meta name="twitter:description" content="Step into Meenaviyal's world of wonder: human ingenuity meets AI prowess, birthing extraordinary libraries, tools, and games. Experience the future of creation!">
     <link rel="canonical" href="https://meenaviyal.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Cabinet+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --text-color: #e2e8f0;
-            --accent-color-1: #60a5fa;
-            --accent-color-2: #f472b6;
-            --accent-color-3: #34d399;
-            --card-bg: #1e293b;
-        }
-        body {
-            font-family: 'Work Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Clash Display', sans-serif;
+            background-color: #080808;
+            color: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(120, 220, 60, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(80, 100, 240, 0.08) 0%, transparent 40%);
+            position: relative;
             overflow-x: hidden;
         }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.02)' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
         .container {
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
-            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             position: relative;
             z-index: 1;
         }
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 4rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        .logo-icon {
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            color: #CBFF4D;
+        }
+
+        .active {
+            background-color: rgba(203, 255, 77, 0.2);
+            color: #CBFF4D;
+        }
+
         h1 {
-            font-family: 'Space Mono', monospace;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-color-1);
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-        .tagline {
-            font-size: 1.2rem;
+            font-family: 'Clash Display', sans-serif;
             font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: clamp(2.5rem, 6vw, 3.2rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            text-align: center;
+            background: linear-gradient(to right, #fff, rgba(203, 255, 77, 0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
         }
+
+        .tagline {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
         .intro {
             max-width: 800px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 4rem;
             text-align: center;
+            color: rgba(255, 255, 255, 0.8);
             font-size: 1.1rem;
             line-height: 1.6;
         }
+
         .highlight {
-            color: var(--accent-color-2);
-            font-weight: 600;
+            color: #CBFF4D;
+            font-weight: 500;
         }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
         #projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            width: 100%;
         }
+
         .project {
-            background-color: var(--card-bg);
-            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        .project:nth-child(3n+1) { --accent-color: var(--accent-color-1); }
-        .project:nth-child(3n+2) { --accent-color: var(--accent-color-2); }
-        .project:nth-child(3n+3) { --accent-color: var(--accent-color-3); }
-        .project:hover {
-            transform: translateY(-5px) rotate(1deg);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
-        .project::before, .project::after {
+
+        .project::before {
             content: "";
             position: absolute;
-            background-color: var(--accent-color);
-            opacity: 0.2;
-            transition: all 0.3s ease;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(203, 255, 77, 0.12), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        .project::before {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            top: -20px;
-            left: -20px;
+
+        .project:hover::before {
+            opacity: 1;
         }
-        .project::after {
-            width: 80px;
-            height: 80px;
-            bottom: -10px;
-            right: -10px;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+        .project:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(203, 255, 77, 0.2);
         }
-        .project:hover::before { transform: scale(1.2) rotate(45deg); }
-        .project:hover::after { transform: scale(1.2) rotate(-45deg); }
+
         .project h3 {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.8rem;
-            color: var(--accent-color);
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #fff;
             margin-top: 0;
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
         }
+
         .project p {
             font-size: 1rem;
             font-weight: 300;
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
+            color: rgba(255, 255, 255, 0.7);
         }
+
         .project a {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-color);
+            background-color: rgba(203, 255, 77, 0.8);
+            color: #080808;
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
             position: relative;
             z-index: 1;
         }
+
         .project a:hover {
-            transform: scale(1.05) rotate(-2deg);
+            background-color: #CBFF4D;
+            transform: translateY(-2px);
         }
+
         #loading {
             text-align: center;
-            font-style: italic;
-            color: var(--text-color);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 1.2rem;
-            margin-top: 2rem;
+            margin: 4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .ai-cursor {
+
+        .loading-dot {
             display: inline-block;
-            width: 10px;
-            height: 20px;
-            background-color: var(--accent-color-1);
-            animation: blink 0.7s infinite;
-            margin-left: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #CBFF4D;
+            margin: 0 4px;
+            animation: loading 1.4s infinite ease-in-out both;
         }
-        @keyframes blink {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes loading {
+            0%, 80%, 100% { 
+                transform: scale(0);
+                opacity: 0.3;
+            }
+            40% { 
+                transform: scale(1);
+                opacity: 1;
+            }
         }
+
         footer {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 5rem;
+            padding: 2rem 0;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            opacity: 0.7;
+            color: rgba(255, 255, 255, 0.5);
         }
-        .background-animation {
-            position: fixed;
+
+        .grid-pattern {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
-            opacity: 0.1;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
             pointer-events: none;
         }
-        .shape {
+
+        .glow {
             position: absolute;
-            opacity: 0.5;
-            animation: float 20s infinite ease-in-out;
-        }
-        .circle {
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
+            background: radial-gradient(circle, rgba(203, 255, 77, 0.08) 0%, transparent 70%);
+            top: -250px;
+            right: -250px;
+            z-index: -1;
+            filter: blur(50px);
         }
-        .triangle {
-            width: 0;
-            height: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-            border-bottom: 86.6px solid;
+
+        .glow-2 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(94, 206, 123, 0.05) 0%, transparent 70%);
+            bottom: -300px;
+            left: -300px;
+            z-index: -1;
+            filter: blur(80px);
         }
-        .square {
-            width: 50px;
-            height: 50px;
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: #CBFF4D;
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
         }
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(20px, 20px) rotate(180deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Fade in animation for content */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.5s; }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .project {
+                padding: 20px;
+            }
+            
+            .project h3 {
+                font-size: 1.3rem;
+            }
+
+            .header {
+                margin-bottom: 3rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .intro {
+                font-size: 1rem;
+            }
         }
     </style>
     <script type="application/ld+json">
@@ -221,32 +406,52 @@
     </script>
 </head>
 <body>
-    <div class="background-animation" aria-hidden="true">
-        <!-- Shapes will be added here dynamically -->
-    </div>
-    <header>
-        <div class="container">
-            <h1>Meenaviyal<span class="ai-cursor"></span></h1>
-            <p class="tagline">Human Imagination, AI Amplified</p>
+    <div class="grid-pattern"></div>
+    <div class="glow"></div>
+    <div class="glow-2"></div>
+    
+    <div class="container">
+        <div class="header fade-in delay-1">
+            <div class="logo-icon">
+                <svg width="162" height="80" viewBox="0 0 162 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M135.254 26.1733L153.977 40L104.991 76.1743L107.834 80L162 40L137.954 22.2428C137.325 23.7316 136.4 25.0661 135.254 26.1733ZM116.321 12.1925C117.059 10.7602 118.08 9.49663 119.31 8.47495L107.834 0L104.991 3.82566L116.321 12.1925ZM17.11 39.3605V40.6394L0 57.697L2.70146 60.3902L21.2441 41.9043H40.5102V59.0436H44.3306V41.9043H64.3879V59.0436H68.2083V41.9043H88.2656V59.0436H92.086V41.9043H126.47V38.0956H92.086V20.9564H88.2656V38.0956H68.2083V20.9564H64.3879V38.0956H44.3306V20.9564H40.5102V38.0956H21.2441L2.70146 19.6098L0 22.303L17.11 39.3605ZM126.947 24.7651C130.904 24.7651 134.111 21.5678 134.111 17.6238C134.111 13.6797 130.904 10.4824 126.947 10.4824C122.991 10.4824 119.784 13.6797 119.784 17.6238C119.784 21.5678 122.991 24.7651 126.947 24.7651Z" fill="url(#paint0_linear_4_57)" fill-opacity="0.9"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_4_57" x1="61.5225" y1="40" x2="161.809" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="#CBFF48"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="form.html" class="nav-link">Join Waitlist</a>
+            </div>
         </div>
-    </header>
-    <main>
-        <div class="container">
-            <section class="intro">
-                <p>Welcome to Meenaviyal, where <span class="highlight">human ingenuity dances with AI brilliance</span>! We're not just using AI; we're jazzing with it. Our secret sauce? A dash of ChatGPT here, a sprinkle of Claude there, and a whole lot of human creativity everywhere. We're the conductors, AI tools are our orchestra, and together we're composing a symphony of mind-bending libraries, tools, and games. Ready to hear what happens when imagination gets an AI upgrade? Dive in and let the show begin!</p>
-            </section>
-            <section id="project-list">
-                <h2 class="visually-hidden">Our AI-Assisted Projects</h2>
-                <div id="loading">Harmonizing human ideas with AI capabilities...</div>
-                <div id="projects"></div>
-            </section>
-        </div>
-    </main>
-    <footer>
-        <div class="container">
+        
+        <h1 class="fade-in delay-2">Our Projects<span class="typing-cursor"></span></h1>
+        <p class="tagline fade-in delay-2">Human Imagination, AI Amplified</p>
+        
+        <section class="intro fade-in delay-2">
+            <p>Welcome to Meenaviyal, where <span class="highlight">human ingenuity dances with AI brilliance</span>! We're not just using AI; we're jazzing with it. Our secret sauce? A dash of ChatGPT here, a sprinkle of Claude there, and a whole lot of human creativity everywhere. We're the conductors, AI tools are our orchestra, and together we're composing a symphony of mind-bending libraries, tools, and games.</p>
+        </section>
+        
+        <section id="project-list" class="fade-in delay-3">
+            <h2 class="visually-hidden">Our AI-Assisted Projects</h2>
+            <div id="loading">
+                Harmonizing human ideas with AI capabilities
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+            </div>
+            <div id="projects"></div>
+        </section>
+        
+        <footer>
             <p>&copy; 2025 Meenaviyal. All rights reserved. Crafted by human minds, powered by AI magic.</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script>
         const orgName = 'meenaviyal';
@@ -264,7 +469,7 @@
                 await displayProjects(projects);
             } catch (error) {
                 console.error('Error:', error);
-                loadingElement.textContent = 'Oops! Our AI collaborator is taking a coffee break. Please try again later.';
+                loadingElement.innerHTML = 'Oops! Our AI collaborator is taking a coffee break. Please try again later.';
             }
         }
 
@@ -299,30 +504,19 @@
             
             if (projectsContainer.children.length === 0) {
                 loadingElement.style.display = 'block';
-                loadingElement.textContent = 'Our AI is brewing new ideas. Check back soon for exciting projects!';
+                loadingElement.innerHTML = 'Our AI is brewing new ideas. Check back soon for exciting projects!';
             }
         }
 
-        function createBackgroundShapes() {
-            const background = document.querySelector('.background-animation');
-            const shapes = ['circle', 'triangle', 'square'];
-            const colors = ['#60a5fa', '#f472b6', '#34d399'];
-
-            for (let i = 0; i < 15; i++) {
-                const shape = document.createElement('div');
-                const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
-                shape.classList.add('shape', randomShape);
-                shape.style.left = `${Math.random() * 100}vw`;
-                shape.style.top = `${Math.random() * 100}vh`;
-                shape.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                shape.style.animationDuration = `${20 + Math.random() * 10}s`;
-                shape.style.animationDelay = `${Math.random() * 5}s`;
-                background.appendChild(shape);
+        // Cursor effect for terminal style
+        const typingCursor = document.querySelector('.typing-cursor');
+        setTimeout(() => {
+            if (typingCursor) {
+                typingCursor.style.animation = 'blink 1s step-end infinite';
             }
-        }
+        }, 2000);
 
         fetchProjects();
-        createBackgroundShapes();
     </script>
 </body>
 </html>
